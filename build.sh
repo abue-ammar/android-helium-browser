@@ -2,7 +2,7 @@
 source common.sh
 set_keys
 export VERSION=$(grep -m1 -o '[0-9]\+\(\.[0-9]\+\)\{3\}' vanadium/args.gn)
-export CHROMIUM_SOURCE=https://github.com/chromium/chromium.git # https://chromium.googlesource.com/chromium/src.git
+export CHROMIUM_SOURCE=https://chromium.googlesource.com/chromium/src.git # https://github.com/chromium/chromium.git
 export DEBIAN_FRONTEND=noninteractive
 sudo apt update
 sudo apt install -y sudo lsb-release file nano git curl python3 python3-pillow

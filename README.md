@@ -39,12 +39,6 @@ config:
   layout: dagre
 ---
 flowchart TD
- subgraph s1["Helium"]
-        n5["Generic Patches<small><br>patches/series</small>"]
-        n6["Name Substitution<small><br>utils/name_substitution.py</small>"]
-        n7["Version Patch<small><br>{*version,revision}.txt</small>"]
-        n8["Resource Patch<small><br>resources/*resources.txt</small>"]
-  end
  subgraph s2["Vanadium"]
         n9["Generic Patches<small><br>patches/*.patch</small>"]
   end
@@ -52,27 +46,17 @@ flowchart TD
         n11["GN Build Configuration<small><br>args.gn</small>"]
         n12["Signed Release"]
   end
-    n1["Chromium"] --> s1 & s2
-    n5 --> n6
-    n6 --> n7
-    n7 --> n8
-    s1 --> s3
+    n1["Chromium"] --> s2
     s2 --> s3
     n11 --> n12
-    n5@{ shape: subproc}
-    n6@{ shape: subproc}
-    n7@{ shape: subproc}
-    n8@{ shape: subproc}
     n9@{ shape: subproc}
     n11@{ shape: subproc}
     n12@{ shape: subproc}
     n1@{ shape: rounded}
     classDef Aqua stroke-width:1px, stroke-dasharray:none, stroke:#46EDC8, fill:#DEFFF8, color:#378E7A
-    style n5 stroke:#FF6D00
-    style n8 stroke:#FF6D00
 ```
 
-The full build aims to be consistent with [Helium](https://github.com/imputnet/helium-linux), which means additional patches are necessary before all features can be ported over. All [Vanadium](https://github.com/GrapheneOS/Vanadium) patches are applied by default. Further patches are underway.
+The full build applies [Vanadium](https://github.com/GrapheneOS/Vanadium) patches by default.
 
 ## Building
 
